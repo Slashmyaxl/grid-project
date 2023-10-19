@@ -1,32 +1,36 @@
-:root {
-    background-color: #111;
-    font-size: 16px;
-    font-family: "Helvetica", sans-serif;
-    --palate-purple: #8b5cf6;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --palate-purple: #8b5cf6;
+    --palate-white: #fefefe;
+    
+}
+
+:root {
+    background-color: #111;
+    font-size: 15px;
+    font-family: "Mulish", sans-serif;
 }
 
 .grid-container {
-    min-height: 100vh;
     max-width: 1460px;
+    min-height: 100vh;
+    height: 100%;
     margin: 0px auto;
     display: grid;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: 260px 1fr;
     grid-template-rows: 160px auto;
     position: relative;
 }
 
 .header {
-    background-color: #fefefe;
+    background-color: var(--palate-white);
     grid-column: 2;
     padding: 16px 32px;
     display: grid;
     grid-template-rows: 45% 55%;
+    box-shadow: 0px 2px 3px lightgrey;
     position: sticky;
     top: 0;
 }
@@ -55,77 +59,118 @@
 
 .upper > .search > input {
     min-width: 180px;
+    max-width: 520px;
     flex-grow: 1;
-    height: 22px;
+    height: 30px;
+    border: none;
+    border-radius: 12px;
+    background-color: #efefef;
+    font-size: 1rem;
+    padding: 2px 6px;
+}
+
+.upper > .search > input:hover {
+    border: 1px solid gray;
 }
 
 .upper > .notifications {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 24px;
+}
+
+.upper > .notifications > .avatar-icon {
+    width: 42px;
+    height: 42px;
 }
 
 .header > .lower {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
+    gap: 16px;
+    padding-right: 12px;
 }
 
 .header > .lower > .user-placard {
     display: grid;
     grid-template-columns: min-content minmax(min-content, 300px);
+    align-items: center;
+    gap: 8px;
+}
+
+.header > .lower > .user-placard > .avatar {
+    height: 56px;
+    width: 56px;
 }
 
 .header > .lower > .nav-buttons {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 12px;
 }
 
 .header > .lower  button {
     background-color: var(--palate-purple);
-    color: #fefefe;
+    color: var(--palate-white);
     text-align: center;
     font-size: 0.9rem;
     font-weight: bold;
     padding: 8px 12px;
-    width: 5rem;
-    height: 2rem;
+    width: 5.4rem;
+    height: 2.2rem;
     border: none;
-    border-radius: 15px;
+    border-radius: 18px;
 }
 
 .sidebar {
     background-color: var(--palate-purple);
-    color: #fefefe;
+    color: var(--palate-white);
     grid-row: 1;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     display: grid;
-    grid-template-columns: 60px 1fr;
-    grid-template-rows: 100px repeat(auto-fill, 60px);
-    padding: 8px;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 80px repeat(auto-fill, 60px);
+    column-gap: 8px;
+    align-items: center;
+    justify-items: center;
+    padding: 16px;
+    box-shadow: 1px 0px 3px lightgrey;
     position: sticky;
     top: 0;
 }
 
-.sidebar .icon {
+.sidebar > .logo {
+    width: 42px;
+    height: 42px;
+}
+
+.sidebar > .icon {
     grid-column: 1;
     width: 24px;
     height: 24px;
 }
 
+.sidebar > h3 {
+    justify-self: start;
+}
+
 .content {
-    background-color: #eee;
+    background-color: #efefef;
     grid-area: 2 / 2;
     display: grid;
-    grid-template-columns: 1fr minmax(auto, 300px);
+    grid-template-columns: 1fr minmax(min-content, 300px);
+    padding: 8px 8px 16px;
 }
 
 .projects {
     display: grid;
-    grid-template-rows: 60px repeat(auto-fit, minmax(180px, min-content));
+    grid-template-rows: 52px repeat(auto-fit, minmax(180px, min-content));
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 18px;
+    row-gap: 12px;
+    column-gap: 18px;
     padding: 0px 14px 40px;
 }
 
@@ -136,7 +181,7 @@
 
 .projects > .card {
     box-shadow: 2px 3px 4px lightgrey;
-    background-color: #fefefe;
+    background-color: var(--palate-white);
     border-left: 7px solid gold;
     border-radius: 8px;
     display: grid;
@@ -155,7 +200,7 @@
 }
 
 .card > p {
-    color: #555;
+    color: #666;
 }
 
 .card .interactions {
@@ -169,10 +214,10 @@
 
 .highlights {
     display: grid;
-    grid-template-rows: 60px min-content 60px min-content;
+    grid-template-rows: 52px min-content 52px min-content;
     padding-right: 18px;
     padding-left: 8px;
-    row-gap: 18px;
+    row-gap: 12px;
 }
 
 .highlights h2 {
@@ -180,20 +225,29 @@
 }
 
 .highlights > section {
-    background-color: #fefefe;
+    background-color: var(--palate-white);
     border-radius: 8px;
     box-shadow: 2px 3px 4px lightgray;
     padding: 28px 14px;
 }
 
-.highlights h4,
+.announcements h4,
 .highlights p {
     padding: 2px 12px;
 }
 
+.announcements p {
+    font-size: 0.85rem;
+}
+
+.highlights p,
+.highlights span {
+    color: #666;
+}
+
 hr {
-    background-color: blue;
-    margin: 6px 0;
+    margin: 10px 0;
+    border-top: 1px solid #bbb;
 }
 
 .highlights > .trending > .trender {
@@ -201,8 +255,28 @@ hr {
     grid-template-columns: min-content 1fr;
     grid-template-rows: 1fr 1fr;
     column-gap: 16px;
+    padding: 4px 12px;
+    margin-bottom: 8px;
+    justify-items: start;
 }
 
-.trending > .trender > .avatar {
+.trender > h4 {
+    align-self: end;
+}
+
+.trender > span {
+    align-self: start;
+}
+
+.trender > .avatar {
     grid-row: 1 / -1;
+    width: 48px;
+    height: 48px;
+}
+
+@media (max-width: 840px) {
+    .content {  
+        grid-template-columns: 360px;
+        justify-content: center;
+    }
 }
