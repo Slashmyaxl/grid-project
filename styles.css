@@ -295,3 +295,11 @@ hr {
         row-gap: 30px;
     }
 }
+
+@media (min-height: 1081px) {
+    .sidebar {
+        position: unset;
+        top: unset;
+        align-self: unset;
+    }
+}
