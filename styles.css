@@ -11,23 +11,20 @@
     background-color: #111;
     font-size: 15px;
     letter-spacing: 0.2px;
-    font-family: "Mulish", sans-serif;
+    font-family: "Mulish", "Helvetica", sans-serif;
 }
 
 body {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    position: relative
 }
 
 .grid-container {
     max-width: 1460px;
-    
     margin: 0px auto;
     display: grid;
     grid-template-columns: 250px 1fr;
     grid-template-rows: 150px auto;
-    position: relative;
 }
 
 .header {
@@ -65,7 +62,7 @@ body {
 
 .upper > .search > input {
     min-width: 180px;
-    max-width: 520px;
+    max-width: 620px;
     flex-grow: 1;
     height: 30px;
     border: none;
@@ -97,8 +94,6 @@ body {
     align-items: center;
     gap: 16px;
     padding-right: 12px;
-    position: sticky;
-    top: 0;
 }
 
 .header > .lower > .user-placard {
