@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --palate-purple: #8b5cf6;
+    --palate-purple: #86198f;
     --palate-white: #fefefe;
     
 }
@@ -10,13 +10,13 @@
 :root {
     background-color: #111;
     font-size: 15px;
+    letter-spacing: 0.2px;
     font-family: "Mulish", sans-serif;
 }
 
 .grid-container {
     max-width: 1460px;
     min-height: 100vh;
-    height: 100%;
     margin: 0px auto;
     display: grid;
     grid-template-columns: 260px 1fr;
@@ -95,7 +95,7 @@
 
 .header > .lower > .user-placard {
     display: grid;
-    grid-template-columns: min-content minmax(min-content, 300px);
+    grid-template-columns: min-content minmax(120px, 300px);
     align-items: center;
     gap: 8px;
 }
@@ -127,34 +127,34 @@
 .sidebar {
     background-color: var(--palate-purple);
     color: var(--palate-white);
-    grid-row: 1;
+    grid-row: 1 / -1;
     min-height: 100vh;
-    height: 100%;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-rows: 80px repeat(auto-fill, 60px);
+    grid-template-rows: 80px repeat(auto-fit, 50px);
     column-gap: 8px;
+    align-content: start;
     align-items: center;
-    justify-items: center;
+    justify-content: start;
     padding: 16px;
     box-shadow: 1px 0px 3px lightgrey;
-    position: sticky;
-    top: 0;
 }
 
 .sidebar > .logo {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
 }
 
 .sidebar > .icon {
     grid-column: 1;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
+    justify-self: center;
+    align-self: center;
 }
 
 .sidebar > h3 {
-    justify-self: start;
+    align-self: center;
 }
 
 .content {
@@ -162,12 +162,12 @@
     grid-area: 2 / 2;
     display: grid;
     grid-template-columns: 1fr minmax(min-content, 300px);
-    padding: 8px 8px 16px;
+    padding: 8px 8px 24px;
 }
 
 .projects {
     display: grid;
-    grid-template-rows: 52px repeat(auto-fit, minmax(180px, min-content));
+    grid-template-rows: 48px repeat(auto-fit, minmax(180px, min-content));
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     row-gap: 12px;
     column-gap: 18px;
@@ -185,7 +185,7 @@
     border-left: 7px solid gold;
     border-radius: 8px;
     display: grid;
-    grid-template-rows: 60px 1fr 80px;
+    grid-template-rows: 54px 1fr 80px;
     padding: 0 18px 10px;
 }
 
@@ -214,7 +214,7 @@
 
 .highlights {
     display: grid;
-    grid-template-rows: 52px min-content 52px min-content;
+    grid-template-rows: 48px min-content 48px min-content;
     padding-right: 18px;
     padding-left: 8px;
     row-gap: 12px;
@@ -228,7 +228,7 @@
     background-color: var(--palate-white);
     border-radius: 8px;
     box-shadow: 2px 3px 4px lightgray;
-    padding: 28px 14px;
+    padding: 24px 14px;
 }
 
 .announcements h4,
@@ -255,9 +255,13 @@ hr {
     grid-template-columns: min-content 1fr;
     grid-template-rows: 1fr 1fr;
     column-gap: 16px;
-    padding: 4px 12px;
+    padding: 2px 12px;
     margin-bottom: 8px;
     justify-items: start;
+}
+
+.highlights > .trending > .trender:last-child {
+    margin-bottom: 0;
 }
 
 .trender > h4 {
