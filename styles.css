@@ -139,8 +139,6 @@
     justify-content: start;
     padding: 16px;
     box-shadow: 1px 0px 3px lightgrey;
-    position: sticky;
-    top: 0;
 }
 
 .sidebar > .logo {
@@ -293,13 +291,5 @@ hr {
         grid-template-columns: 380px;
         justify-content: center;
         row-gap: 30px;
-    }
-}
-
-@media (min-height: 1081px) {
-    .sidebar {
-        position: unset;
-        top: unset;
-        align-self: unset;
     }
 }
